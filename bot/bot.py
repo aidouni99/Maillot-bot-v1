@@ -79,7 +79,7 @@ async def is_bot_mentioned(update: Update, context: CallbackContext):
             if message.reply_to_message.from_user.id == context.bot.id:
                 return True
     except:
-        return True
+        return False
     else:
         return False
 
@@ -324,9 +324,9 @@ async def _vision_message_handle_fn(update: Update, context: CallbackContext, us
         return
 
 async def unsupport_message_handle(update: Update, context: CallbackContext, message=None):
-    error_text = f"I don't know how to read files or videos. Send the picture in normal mode (Quick Mode)."
-    logger.error(error_text)
-    await update.message.reply_text(error_text)
+    #error_text = f"I don't know how to read files or videos. Send the picture in normal mode (Quick Mode)."
+    #logger.error(error_text)
+    #await update.message.reply_text(error_text)
     return
 
 async def message_handle(update: Update, context: CallbackContext, message=None, use_new_dialog_timeout=True):
